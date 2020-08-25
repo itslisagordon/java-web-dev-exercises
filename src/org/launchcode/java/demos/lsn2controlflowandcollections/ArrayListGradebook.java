@@ -1,5 +1,6 @@
 package org.launchcode.java.demos.lsn2controlflowandcollections;
 
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -16,7 +17,7 @@ public class ArrayListGradebook {
 
         // Get student names
         do {
-            newStudent = input.nextLine();
+            newStudent = input.nextLine().trim();
 
             if (!newStudent.equals("")) {
                 students.add(newStudent);
@@ -30,6 +31,8 @@ public class ArrayListGradebook {
             Double grade = input.nextDouble();
             grades.add(grade);
         }
+
+
 
         // Print class roster
         System.out.println("\nClass roster:");
