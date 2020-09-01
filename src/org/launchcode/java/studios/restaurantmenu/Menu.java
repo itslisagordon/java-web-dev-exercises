@@ -54,7 +54,7 @@ public class Menu {
     public boolean isEqual(MenuItem item) {
         boolean isEqual = false;
         for (MenuItem i : listOfPlates) {
-            if (i == item) {
+            if (i.equals(item)) {
                isEqual = true;
             }
         }
