@@ -1,5 +1,7 @@
 package org.launchcode.java.studios.restaurantmenu;
 
+import java.util.Objects;
+
 public class MenuItem {
     //price, description, category (appetizer, main course, or dessert)
     //should display whether MenuItem is new or not
@@ -21,6 +23,37 @@ public class MenuItem {
         this.isNew = true;
         this.isVegan = isVegan;
         //setter will be different because it's a boolean
+    }
+
+    public boolean isNewItem() {
+        return isNew();
+    }
+
+    @Override
+    public String toString() {
+        return "MenuItem{" +
+                "name='" + name + '\'' +
+                ", price=" + price +
+                ", description='" + description + '\'' +
+                ", category='" + category + '\'' +
+                ", isNew=" + isNew +
+                ", isVegan=" + isVegan +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MenuItem menuItem = (MenuItem) o;
+        return isVegan == menuItem.isVegan &&
+                name.equals(menuItem.name) &&
+                description.equals(menuItem.description);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, description, isVegan);
     }
 
     //getters/setters:
